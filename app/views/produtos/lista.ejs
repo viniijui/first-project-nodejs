@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First test with EJS</title>
+</head>
+<body>
+	<h1 style="text-align: center;">Using EJS</h1>
+	<table style="border: 1px solid black;">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Qtd</th>
+			</tr>			
+		</thead>
+		<tbody style="border: 1px solid black;">
+			<% for(var i=0; i<result.length; i++) { %>
+				<tr style="border: 1px solid black;">
+					<td style="border: 1px solid black;"><%= result[i].id %></td>
+					<td style="border: 1px solid black;"><%= result[i].name %></td>
+					<td style="border: 1px solid black;"><%= result[i].description %></td>
+					<td style="border: 1px solid black;"><%= result[i].qtd %></td>
+				</tr>					
+			<% } %>
+		</tbody>
+	</table>
+</body>
+</html>
