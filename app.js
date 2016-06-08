@@ -1,8 +1,6 @@
 //chamando o express
-var app = require('./app/config/express')();
-var routes = require('./app/routes/productRoutes')(app);
+var app = require('./config/express')();
 
-//rota
 app.get('/', function(req, res) {
 	res.send("<html><head><title>test</title><head><body><h1>First project</h1></body></html>");
 	console.log('aqui');
