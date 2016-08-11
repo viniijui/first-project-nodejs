@@ -16,6 +16,17 @@ module.exports = function(app) {
 		var connection = app.config.database();
 		var productQuery = new app.models.ProductModel(connection);
 		var form_request = req.body;
+
+		req.assert('name', 'Name is required.').notEmpty();
+		req.assert('qtd', 'Qtd is required').notEmpty();
+		
+		var errorValidation = req.validationErrors();
+
+		if (errorValidation) {
+			res.render('produtos/form', {errorValidations:errorValidation});
+			return;
+		}
+
 		productQuery.save(form_request, function(err, result) {
 			if (err) console.log(err);
 			res.redirect("/product");

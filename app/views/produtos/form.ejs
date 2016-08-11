@@ -7,8 +7,22 @@
 <body>
 	<form action="/product/create" method="post">
 		<div>
+			
+		
+		</div>
+		<div>
 			<label for="name"> Name:</label>
 			<input type="text" class="text" id="name" name="name">
+			<% if(typeof errorValidations != 'undefined'){ %>
+				<%for(i=0;i<errorValidations.length;i++) {%>
+					<% if (errorValidations[i].param == 'name') { -%>
+						<br /> 
+						<span style="color:red">
+							<%= errorValidations[i].msg %>
+						</span>
+					<% } -%>
+				<%}%>
+			<% } %>
 		</div>
 		<div>
 			<label for="description"> Description:</label>
@@ -17,6 +31,17 @@
 		<div>
 			<label for="qtd"> Qtd:</label>
 			<input type="text" class="text" id="qtd" name="qtd">
+			<% if(typeof errorValidations != 'undefined'){ %>
+				<%for(i=0;i<errorValidations.length;i++) {%>
+					<% if (errorValidations[i].param == 'qtd') { -%>
+						<br />
+						<span style="color:red">
+							<%= errorValidations[i].msg %>
+						</span>
+					<% } -%>
+					
+				<%}%>
+		<% } %>
 		</div>
 		<input type="submit" valu="Enviar">
 	</form>
