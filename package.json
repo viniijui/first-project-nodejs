@@ -2,18 +2,19 @@
   "name": "first_project",
   "version": "1.0.0",
   "description": "first project with nodejs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "vinicius",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "body-parser": "^1.15.1",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
-    "express-load": "^1.1.15",
-    "express-validator": "^2.20.5",
+    "lodash": "^4.14.2",
     "mysql": "^2.10.2"
   }
 }
